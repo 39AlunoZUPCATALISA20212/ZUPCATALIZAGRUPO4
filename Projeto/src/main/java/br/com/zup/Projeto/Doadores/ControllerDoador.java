@@ -16,11 +16,12 @@ public class ControllerDoador
         postDoador = serviceDoador.createDoador(doador);
         return postDoador;
     }
-    @GetMapping("{ID}")
+    @GetMapping("{/ID}")
     public Doador getDoador(@PathVariable(name = "ID") int doadorId)
     {
         Doador getDoador = null;
         getDoador = serviceDoador.readDoadorId(doadorId);
         return getDoador;
     }
+
 }
