@@ -3,7 +3,7 @@ package br.com.zup.Projeto.Doadores;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Doadores")
+@Table(name = "doadores")
 public class Doador
 {
     @Column(nullable = false)
