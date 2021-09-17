@@ -29,9 +29,25 @@ public class ServiceDoador
         Optional<Doador> doadorOptional;
         doadorOptional = repositoryDoadores.findById(id);
         if(doadorOptional.isEmpty())
-            throw  new RuntimeException("fail");
+            throw new RuntimeException("fail");
         else
             return doadorOptional.get();
+    }
+    public Doador updateDoadorId(int id, Doador doador)
+    {
+        readDoadorId(id);
+        Doador updateDoadorID = null;
+        updateDoadorID = repositoryDoadores.save(doador);
+        return updateDoadorID;
+    }
+    public void deleteDoadorId(int id)
+    {
+        boolean emptyCatchBlock = false;
+        readDoadorId(id);
+        repositoryDoadores.deleteById(id);
+        try {readDoadorId(id);}
+        catch (RuntimeException runtimeException)
+        {emptyCatchBlock = true;}
     }
 
 }
