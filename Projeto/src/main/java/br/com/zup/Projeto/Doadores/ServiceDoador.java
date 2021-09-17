@@ -33,12 +33,22 @@ public class ServiceDoador
         else
             return doadorOptional.get();
     }
+    public Doador updateDoador(Doador doador)
+    {
+        Doador updateDoador = null;
+        updateDoador = repositoryDoadores.save(doador);
+        return updateDoador;
+    }
     public Doador updateDoadorId(int id, Doador doador)
     {
         readDoadorId(id);
         Doador updateDoadorID = null;
         updateDoadorID = repositoryDoadores.save(doador);
         return updateDoadorID;
+    }
+    public void deleteDoador(Doador doador)
+    {
+        repositoryDoadores.delete(doador);
     }
     public void deleteDoadorId(int id)
     {

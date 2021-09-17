@@ -1,6 +1,7 @@
 package br.com.zup.Projeto.Doadores;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +21,7 @@ public class ServiceDoadorTest
     @MockBean
     private RepositoryDoadores repositoryDoadores;
 
+    @Test
     public void testCreateDoador()
     {
         Doador createDoador = new Doador();
@@ -29,6 +31,7 @@ public class ServiceDoadorTest
         Assertions.assertNotNull(testCreateDoador);
         Assertions.assertEquals(createDoador, testCreateDoador);
     }
+    @Test
     public void testReadDoador()
     {
         Iterable<Doador> readDoador = new Vector<Doador>();
@@ -38,6 +41,7 @@ public class ServiceDoadorTest
         Assertions.assertNotNull(testReadDoador);
         Assertions.assertEquals(readDoador, testReadDoador);
     }
+    @Test
     public void testReadDoadorIdNoThrow()
     {
         Optional<Doador> readDoadorId = Optional.of(new Doador());
@@ -48,13 +52,13 @@ public class ServiceDoadorTest
         Assertions.assertEquals(readDoadorId.get(), testReadDoadorId);
         Assertions.assertDoesNotThrow(() -> serviceDoador.readDoadorId(id));
     }
+    @Test
     public void testReadDoadorIdThrow()
     {
         Optional<Doador> readDoadorId = Optional.empty();
         final int id = 1;
         Mockito.when(repositoryDoadores.findById(Mockito.anyInt()))
                .thenReturn(readDoadorId);
-        Doador testReadDoadorId= serviceDoador.readDoadorId(id);
         Assertions.assertThrows(RuntimeException.class, () -> serviceDoador.readDoadorId(id));
     }
 }
