@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DoacoesController {
     @RequestMapping({"/home"})
     public ResponseEntity <String> homePage(){
-        return ResponseEntity.ok("homePage Doaçoes");
+        return ResponseEntity.ok("homePage Doacoes");
 
     }
 
