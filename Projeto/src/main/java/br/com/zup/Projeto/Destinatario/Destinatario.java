@@ -11,7 +11,7 @@ public class Destinatario
     private String nome;
     @Column(nullable = true)
     private String telefone;
-    @Column(nullable = true, unique = true)
+    @Column(nullable = false, unique = true)
     private String cpf;
     @Column(nullable = true)
     private String cep;
