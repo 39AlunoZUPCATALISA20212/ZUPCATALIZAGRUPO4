@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.Destinatario;
+package br.com.zup.Projeto.Beneficiario;
 
 public enum EstadoCivil
 {
