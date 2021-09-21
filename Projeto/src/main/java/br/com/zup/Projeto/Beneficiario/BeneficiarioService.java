@@ -46,7 +46,7 @@ public class BeneficiarioService {
         return repositoryBeneficiario.findById(id)
                 .map(objBeneficiario -> {
                     objBeneficiario.setNome(beneficiario.getNome());
-                    objBeneficiario.setCep(beneficiario.getCep());
+                    objBeneficiario.setEndereco(beneficiario.getEndereco());
                     objBeneficiario.setCpf(beneficiario.getCpf());
                     objBeneficiario.setDependentes(beneficiario.getDependentes());
                     objBeneficiario.setIdade(beneficiario.getIdade());
