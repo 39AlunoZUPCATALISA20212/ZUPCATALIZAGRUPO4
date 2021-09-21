@@ -1,11 +1,9 @@
 package br.com.zup.Projeto.Entidades;
 
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
-public enum Doadores
+public enum Donativos
 {
     ALIMENTOS,
     HIGIENEPESSOAL,
@@ -16,5 +14,5 @@ public enum Doadores
     BENSDECONSUMO,
     BENSDECONSUMODURAVEIS,
     MATERIAPRIMA,
-    MATERIALRECICLADO,
+    MATERIALRECICLADO
 }
