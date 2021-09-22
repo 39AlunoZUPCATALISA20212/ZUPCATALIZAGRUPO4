@@ -1,9 +1,6 @@
-package br.com.zup.Projeto.Entidades;
+package br.com.zup.Projeto.TiposDeDonativos;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-public enum Donativos
+public enum OsTiposDeDonativos
 {
     ALIMENTOS,
     HIGIENEPESSOAL,

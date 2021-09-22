@@ -1,9 +1,6 @@
-package br.com.zup.Projeto.Entidades;
+package br.com.zup.Projeto.TiposDeDoacoes;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-public enum Doacoes
+public enum OsTiposDeDoacoes
 {
     ALIMENTOS,
     HIGIENEPESSOAL,

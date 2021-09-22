@@ -1,16 +1,15 @@
 package br.com.zup.Projeto.PontosDeColeta;
 
+import br.com.zup.Projeto.Coordenadas.Coordenadas;
 import br.com.zup.Projeto.Entidades.*;
-import org.hibernate.annotations.ManyToAny;
-import org.hibernate.annotations.Type;
+import br.com.zup.Projeto.TiposDeBeneficiario.TiposDeBeneficiario;
+import br.com.zup.Projeto.TiposDeDoacoes.TiposDeDoacoes;
+import br.com.zup.Projeto.TiposDeDoador.TiposDeDoador;
+import br.com.zup.Projeto.TiposDeDonativos.TiposDeDonativos;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.EnumSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "pontosdecoleta")
@@ -21,26 +20,12 @@ public class PontoDeColeta
     private String nome;
     private String telefone;
     private String cep;
-    /*@ManyToOne(targetEntity = Entidades.class)
-    private List<Entidades> entidades;*/
-    /*@ElementCollection()
-    @Enumerated()
-    @OrderColumn()
-    @Type(type = "br.com.zup.Projeto.Entidades.Doacoes")
-    @Column(name = "doadores", table = "doadores")
-    @MapKeyColumn(name = "doadores", table = "doadores",  )*/
-    //private Set<Doadores> doadores = EnumSet.noneOf(Doadores.class);
-    //@ElementCollection(targetClass = Doacoes.class)
-
-
-
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "Doacoes", joinColumns = @JoinColumn(name = "id"))
-    @Enumerated(EnumType.STRING)
-    private List<Doacoes> doacoes;
-
-    //List<Destinatarios> destinatarios;
-    //List<Donativos> donativos;
+    @ManyToOne(targetEntity = Entidade.class)
+    private List<Entidade> entidades;
+    private List<TiposDeBeneficiario> beneficiarios;
+    private List<TiposDeDonativos> donativos;
+    private List<TiposDeDoador> doadores;
+    private List<TiposDeDoacoes> doacoes;
     private LocalTime funcionamento;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -50,3 +35,17 @@ public class PontoDeColeta
 
 
 }
+ /*@ElementCollection()
+    @Enumerated()
+    @OrderColumn()
+    @Type(type = "br.com.zup.Projeto.Entidades.Doacoes")
+    @Column(name = "doadores", table = "doadores")
+    @MapKeyColumn(name = "doadores", table = "doadores",  )*/
+//private Set<Doadores> doadores = EnumSet.noneOf(Doadores.class);
+//@ElementCollection(targetClass = Doacoes.class)
+
+
+
+    /*@ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "Doacoes", joinColumns = @JoinColumn(name = "id"))
+    @Enumerated(EnumType.STRING)*/

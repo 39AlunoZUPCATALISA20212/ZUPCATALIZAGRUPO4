@@ -42,9 +42,9 @@ public class ServiceDoador
     public Doador updateDoadorId(int id, Doador doador)
     {
         readDoadorId(id);
-        Doador updateDoadorID = null;
-        updateDoadorID = repositoryDoadores.save(doador);
-        return updateDoadorID;
+        Doador updateDoadorId = null;
+        updateDoadorId = repositoryDoadores.save(doador);
+        return updateDoadorId;
     }
     public void deleteDoador(Doador doador)
     {

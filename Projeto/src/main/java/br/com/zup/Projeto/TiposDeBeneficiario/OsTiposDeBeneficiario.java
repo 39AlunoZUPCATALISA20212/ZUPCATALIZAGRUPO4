@@ -1,6 +1,7 @@
-package br.com.zup.Projeto.Entidades;
+package br.com.zup.Projeto.TiposDeBeneficiario;
 
-public enum Destinatarios
+public enum OsTiposDeBeneficiario
+
 {
     CRIANCAS,
     MULHERES,
@@ -14,5 +15,6 @@ public enum Destinatarios
     SEMTETO,
     SEMTERRA,
     EGRESSOSDOTRABALHOINFANTIL,
-    DEPENDENTESQUIMICOS
+    DEPENDENTESQUIMICOS,
+    VITIMASDEABUSOSEXUAL
 }
