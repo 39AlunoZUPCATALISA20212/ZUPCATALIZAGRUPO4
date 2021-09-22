@@ -5,19 +5,19 @@ import java.time.LocalTime;
 
 @Entity
 @Table(name = "beneficiarios")
-public class Beneficiario
-{
+public class Beneficiario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(nullable = false, unique = true)
     private String nome;
+    private String email;
     @Column(nullable = true)
     private String telefone;
     @Column(nullable = false, unique = true)
     private String cpf;
-    @Column(nullable = true)
-    private String cep;
+    @Embedded
+    private Endereco endereco;
     @Column(nullable = true)
     private int idade;
     @Column(nullable = true)
@@ -32,12 +32,13 @@ public class Beneficiario
     public Beneficiario() {
     }
 
-    public Beneficiario(int id, String nome, String telefone, String cpf, String cep, int idade, EstadoCivil estadoCivil, int dependentes, double renda, OrigemRenda origemRenda) {
+    public Beneficiario(int id, String nome, String email, String telefone, String cpf, Endereco endereco, int idade, EstadoCivil estadoCivil, int dependentes, double renda, OrigemRenda origemRenda) {
         this.id = id;
         this.nome = nome;
+        this.email = email;
         this.telefone = telefone;
         this.cpf = cpf;
-        this.cep = cep;
+        this.endereco = endereco;
         this.idade = idade;
         this.estadoCivil = estadoCivil;
         this.dependentes = dependentes;
@@ -61,6 +62,14 @@ public class Beneficiario
         this.nome = nome;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getTelefone() {
         return telefone;
     }
@@ -77,12 +86,12 @@ public class Beneficiario
         this.cpf = cpf;
     }
 
-    public String getCep() {
-        return cep;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setCep(String cep) {
-        this.cep = cep;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public int getIdade() {
