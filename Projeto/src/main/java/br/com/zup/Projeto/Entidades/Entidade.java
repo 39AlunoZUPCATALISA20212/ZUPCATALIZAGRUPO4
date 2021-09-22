@@ -28,13 +28,13 @@ public class Entidade
     private String cnpj;
     @Column(nullable = false)
     private String cep;
-    @ManyToMany
+    @ManyToMany(targetEntity = TiposDeBeneficiario.class)
     private List<TiposDeBeneficiario> beneficiarios;
-    @ManyToMany
+    @ManyToMany(targetEntity = TiposDeDonativos.class)
     private List<TiposDeDonativos> donativos;
-    @ManyToMany
+    @ManyToMany(targetEntity = TiposDeDoador.class)
     private List<TiposDeDoador> doadores;
-    @ManyToMany
+    @ManyToMany(targetEntity = TiposDeDoacoes.class)
     private List<TiposDeDoacoes> doacoes;
     private LocalTime funcionamento;
     @GeneratedValue(strategy = GenerationType.IDENTITY)

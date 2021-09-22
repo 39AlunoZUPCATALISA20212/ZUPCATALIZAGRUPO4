@@ -4,9 +4,7 @@ import br.com.zup.Projeto.Doadores.Doador;
 import br.com.zup.Projeto.Entidades.Entidade;
 import br.com.zup.Projeto.TiposDeDoacoes.TiposDeDoacoes;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,5 +18,7 @@ public class Doacao
     @ManyToOne
     private TiposDeDoacoes doacoes;
     private LocalDateTime horario;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private int id;
 }
