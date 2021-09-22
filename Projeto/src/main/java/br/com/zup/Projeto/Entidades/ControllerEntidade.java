@@ -18,7 +18,7 @@ public class ControllerEntidade
         return postEntidade;
     }
     @GetMapping("/{ID}")
-    private Entidade getEntidade(@PathVariable(name = "ID") int entidadeId)
+    public Entidade getEntidade(@PathVariable(name = "ID") int entidadeId)
     {
         Entidade getEntidade = null;
         getEntidade = serviceEntidades.readEntidadeId(entidadeId);
