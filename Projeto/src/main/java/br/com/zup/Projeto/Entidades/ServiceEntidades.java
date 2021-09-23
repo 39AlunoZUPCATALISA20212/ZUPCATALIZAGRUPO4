@@ -1,9 +1,12 @@
 package br.com.zup.Projeto.Entidades;
 
-import br.com.zup.Projeto.Doadores.Doador;
+import br.com.zup.Projeto.TiposDeDoador.OsTiposDeDoador;
+import br.com.zup.Projeto.TiposDeDoador.ServiceTiposDeDoador;
+import br.com.zup.Projeto.TiposDeDoador.TiposDeDoador;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -11,6 +14,8 @@ public class ServiceEntidades
 {
     @Autowired
     private RepositoryEntidades repositoryEntidades;
+    @Autowired
+    private ServiceTiposDeDoador serviceTiposDeDoador;
 
     public Entidade createEntidade(Entidade entidade)
     {
@@ -24,6 +29,18 @@ public class ServiceEntidades
         readEntidade = repositoryEntidades.findAll();
         return readEntidade;
     }
+    public Iterable<Entidade> readEntidadesDoador(Iterable<TiposDeDoador> iterable)
+    {
+        Iterable<Entidade> readEntidatesDoador = null;
+        readEntidatesDoador = repositoryEntidades.findAllBydoadoresIn(iterable);
+        return readEntidatesDoador;
+    }
+    public Iterable<Entidade> readEntidadesEnumString (String string)
+    {
+        TiposDeDoador readEntidadeEnumString = null;
+        readEntidadeEnumString = serviceTiposDeDoador.readTiposDeDoadorTiposDeDoador(OsTiposDeDoador.valueOf(string));
+        return readEntidadesDoador(List.of(readEntidadeEnumString));
+    }
     public Entidade readEntidadeId(int id)
     {
         Optional<Entidade> entidadeOptional;
@@ -33,6 +50,7 @@ public class ServiceEntidades
         else
             return entidadeOptional.get();
     }
+
     public Entidade updateEntidade(Entidade entidade)
     {
         Entidade updateEntidade = null;
