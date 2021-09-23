@@ -7,13 +7,9 @@ import javax.persistence.*;
 public class Coordenadas
 {
     @Column(nullable = false)
-    private double grausLatitude;
-    @Column(nullable = true)
-    private double minutosLatitude;
+    private double latitude;
     @Column(nullable = false)
-    private double grausLongitude;
-    @Column(nullable = true)
-    private double minutosLongitude;
+    private double longitude;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -21,36 +17,20 @@ public class Coordenadas
     public Coordenadas() {
     }
 
-    public double getGrausLatitude() {
-        return grausLatitude;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setGrausLatitude(double grausLatitude) {
-        this.grausLatitude = grausLatitude;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
-    public double getMinutosLatitude() {
-        return minutosLatitude;
+    public double getLongitude() {
+        return longitude;
     }
 
-    public void setMinutosLatitude(double minutosLatitude) {
-        this.minutosLatitude = minutosLatitude;
-    }
-
-    public double getGrausLongitude() {
-        return grausLongitude;
-    }
-
-    public void setGrausLongitude(double grausLongitude) {
-        this.grausLongitude = grausLongitude;
-    }
-
-    public double getMinutosLongitude() {
-        return minutosLongitude;
-    }
-
-    public void setMinutosLongitude(double minutosLongitude) {
-        this.minutosLongitude = minutosLongitude;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public int getId() {

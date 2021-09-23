@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.Doar;
+package br.com.zup.Projeto.AgendarDoacao;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

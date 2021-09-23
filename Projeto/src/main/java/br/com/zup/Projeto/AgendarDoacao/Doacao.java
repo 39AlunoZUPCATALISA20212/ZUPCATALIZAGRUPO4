@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.Doar;
+package br.com.zup.Projeto.AgendarDoacao;
 
 import br.com.zup.Projeto.Doadores.Doador;
 import br.com.zup.Projeto.Entidades.Entidade;

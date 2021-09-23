@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.Doar;
+package br.com.zup.Projeto.AgendarDoacao;
 
 import org.springframework.data.repository.CrudRepository;
 
