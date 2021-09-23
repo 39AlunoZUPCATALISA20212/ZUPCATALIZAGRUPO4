@@ -9,19 +9,21 @@ public class ControllerDoador
 {
     @Autowired
     private ServiceDoador serviceDoador;
+    @Autowired
+    private ServiceDTO serviceDTO;
     @PostMapping
-    public Doador postDoador(@RequestBody Doador doador)
+    public DoadorODTO postDoador(@RequestBody DoadorIDTO doadorIDTO)
     {
         Doador postDoador = null;
-        postDoador = serviceDoador.createDoador(doador);
-        return postDoador;
+        postDoador = serviceDoador.createDoador(serviceDTO.doador(doadorIDTO));
+        return serviceDTO.doadorODTO(postDoador);
     }
     @GetMapping("{/ID}")
-    public Doador getDoador(@PathVariable(name = "ID") int doadorId)
+    public DoadorODTO getDoador(@PathVariable(name = "ID") int doadorId)
     {
         Doador getDoador = null;
         getDoador = serviceDoador.readDoadorId(doadorId);
-        return getDoador;
+        return serviceDTO.doadorODTO(getDoador);
     }
 
 }

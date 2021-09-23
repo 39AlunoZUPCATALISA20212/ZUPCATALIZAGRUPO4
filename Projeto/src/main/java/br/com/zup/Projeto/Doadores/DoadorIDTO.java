@@ -2,27 +2,14 @@ package br.com.zup.Projeto.Doadores;
 
 import br.com.zup.Projeto.Endereco.Endereco;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "doadores")
-public class Doador
+public class DoadorIDTO
 {
-    @Column(nullable = false)
     private String nome;
-    @Column(nullable = false)
     private String telefone;
-    @Column(nullable = false, unique = true)
     private String cpf;
-    @Column(nullable = false)
-    @ManyToOne
     private Endereco endereco;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
 
-
-    public Doador() {
+    public DoadorIDTO() {
     }
 
     public String getNome() {
@@ -55,13 +42,5 @@ public class Doador
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }
