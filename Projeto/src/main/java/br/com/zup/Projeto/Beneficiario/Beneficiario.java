@@ -1,5 +1,7 @@
 package br.com.zup.Projeto.Beneficiario;
 
+import br.com.zup.Projeto.Endereco.Endereco;
+
 import javax.persistence.*;
 import java.time.LocalTime;
 
