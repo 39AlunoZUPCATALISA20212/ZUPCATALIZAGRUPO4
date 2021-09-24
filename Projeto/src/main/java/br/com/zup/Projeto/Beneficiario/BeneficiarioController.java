@@ -28,7 +28,7 @@ public class BeneficiarioController {
         return beneficiarioService.listarBeneficiarios();
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public Optional<Beneficiario> deletarBeneficiario(@PathVariable int id){
         return beneficiarioService.deletarBeneficiario(id);
     }
