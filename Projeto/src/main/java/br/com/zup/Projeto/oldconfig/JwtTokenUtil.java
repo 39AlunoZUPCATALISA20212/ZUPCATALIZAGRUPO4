@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.config;
+package br.com.zup.Projeto.NOVOSecurity.config;
 
 import java.io.Serializable;
 import java.util.Date;

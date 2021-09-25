@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.config;
+package br.com.zup.Projeto.NOVOSecurity.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

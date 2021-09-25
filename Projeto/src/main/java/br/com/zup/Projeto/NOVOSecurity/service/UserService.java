@@ -1,9 +1,9 @@
-package br.com.zup.Projeto.service;
+package br.com.zup.Projeto.NOVOSecurity.service;
 
 
-import br.com.zup.Projeto.model.User;
-import br.com.zup.Projeto.model.UserDto;
-import br.com.zup.Projeto.repository.UserRepository;
+import br.com.zup.Projeto.NOVOSecurity.model.User;
+import br.com.zup.Projeto.NOVOSecurity.model.UserDto;
+import br.com.zup.Projeto.NOVOSecurity.repository.UserRepository;
 import io.jsonwebtoken.JwtException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.config;
+package br.com.zup.Projeto.NOVOSecurity.config;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.config;
+package br.com.zup.Projeto.NOVOSecurity.config;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;
@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static br.com.zup.Projeto.model.Constants.HEADER_STRING;
-import static br.com.zup.Projeto.model.Constants.TOKEN_PREFIX;
+import static br.com.zup.Projeto.NOVOSecurity.model.Constants.HEADER_STRING;
+import static br.com.zup.Projeto.NOVOSecurity.model.Constants.TOKEN_PREFIX;
 
 
 public class JwtAuthenticationFilter extends OncePerRequestFilter {

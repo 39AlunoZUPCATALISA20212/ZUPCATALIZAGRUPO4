@@ -1,8 +1,8 @@
-package br.com.zup.Projeto.controller;
+package br.com.zup.Projeto.NOVOSecurity.controller;
 
 
-import br.com.zup.Projeto.NOVOSecurity.model.UserDto;
 import br.com.zup.Projeto.NOVOSecurity.service.UserService;
+import br.com.zup.Projeto.NOVOSecurity.model.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

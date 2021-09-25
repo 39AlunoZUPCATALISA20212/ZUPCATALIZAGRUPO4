@@ -1,24 +1,21 @@
-package br.com.zup.Projeto.config;
+package br.com.zup.Projeto.NOVOSecurity.config;
 
 
-import br.com.zup.Projeto.model.Constants;
+import br.com.zup.Projeto.NOVOSecurity.model.Constants;
 import io.jsonwebtoken.*;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Date;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static br.com.zup.Projeto.model.Constants.AUTHORITIES_KEY;
-import static br.com.zup.Projeto.model.Constants.SIGNING_KEY;
+import static br.com.zup.Projeto.NOVOSecurity.model.Constants.AUTHORITIES_KEY;
+import static br.com.zup.Projeto.NOVOSecurity.model.Constants.SIGNING_KEY;
 
 
 @Component

@@ -1,6 +1,6 @@
-package br.com.zup.Projeto.model;
+package br.com.zup.Projeto.NOVOSecurity.model;
 
-public class LoginUser {
+public class UserDto {
 
     private String username;
     private String password;

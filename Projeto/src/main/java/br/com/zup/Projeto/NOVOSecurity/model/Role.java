@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.model;
+package br.com.zup.Projeto.NOVOSecurity.model;
 
 import javax.persistence.*;
 

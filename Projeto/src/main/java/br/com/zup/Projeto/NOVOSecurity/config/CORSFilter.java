@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.config;
+package br.com.zup.Projeto.NOVOSecurity.config;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
