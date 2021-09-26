@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "enderecos")
 public class Endereco
 {
+    @ManyToOne
     private NumeroEComplemento numeroEComplemento;
     private String cep;
     private String logradouro;

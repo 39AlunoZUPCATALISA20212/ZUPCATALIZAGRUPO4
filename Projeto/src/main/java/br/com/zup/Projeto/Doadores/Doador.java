@@ -14,7 +14,7 @@ public class Doador
     private String telefone;
     @Column(nullable = false, unique = true)
     private String cpf;
-    @Column(nullable = false)
+    //@Column(nullable = false)
     @ManyToOne
     private Endereco endereco;
     @Id

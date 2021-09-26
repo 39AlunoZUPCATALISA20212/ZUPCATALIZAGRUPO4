@@ -18,7 +18,7 @@ public class Beneficiario {
     private String telefone;
     @Column(nullable = false, unique = true)
     private String cpf;
-    @Embedded
+    @ManyToOne
     private Endereco endereco;
     @Column(nullable = true)
     private int idade;
