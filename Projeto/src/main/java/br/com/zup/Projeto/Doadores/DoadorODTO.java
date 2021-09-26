@@ -4,9 +4,7 @@ public class DoadorODTO extends DoadorIDTO
 {
     private int id;
 
-    public DoadorODTO(int id) {
-        this.id = id;
-    }
+    public DoadorODTO() {}
 
     public int getId() {
         return id;
