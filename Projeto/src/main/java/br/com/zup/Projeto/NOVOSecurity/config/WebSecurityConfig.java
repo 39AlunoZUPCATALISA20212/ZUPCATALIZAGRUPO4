@@ -22,6 +22,21 @@ import javax.annotation.Resource;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    /*  modelo vini endpoints*/
+    private static final String[] PUBLICOS =
+            {
+                    "/doador",
+                    "/doador/{\\d+}",
+                    "/beneficiarios",
+                    "/entidade",
+                    "/entidade/{\\d+}",
+                    "/entidades",
+                    "/pontodecoleta",
+                    "/pontodecoleta/{\\d+}",
+                    "/pontosdecoleta"
+            };
+    /* /modelo vini endpoints*/
+
     @Resource(name = "userService")
     private UserDetailsService userDetailsService;
 
@@ -49,6 +64,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().
                 authorizeRequests()
+                /*  modelo vini endpoints*/
+                .antMatchers(PUBLICOS).permitAll()
+                /* /modelo vini endpoints*/
                 .antMatchers("/token/*", "/signup").permitAll()
                 .anyRequest().authenticated()
                 .and()
