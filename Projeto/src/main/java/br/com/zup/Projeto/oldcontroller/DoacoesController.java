@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.controller;
+/*package br.com.zup.Projeto.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,3 +13,4 @@ public class DoacoesController {
     }
 
 }
+*/

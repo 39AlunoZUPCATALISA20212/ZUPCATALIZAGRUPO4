@@ -1,4 +1,4 @@
-package br.com.zup.Projeto;
+/*package br.com.zup.Projeto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,3 +12,4 @@ ProjetoApplication {
 	}
 
 }
+*/
