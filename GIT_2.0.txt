@@ -24,7 +24,7 @@ Para isso:
 	que voce não encontra no repositorio valido, e quer adicionar, fazer push de ProjetosArquivados/ NAO VAI SERVIR.
 	
 	O que voce precisa fazer é Abir a pasta ProjetosArquivados/ZUPCATALIZAGRUPO4 e 
-	copiar/colar diretamente na pasta do repositorio valido, para depois fazer:
+	copiar/colar os arquivos faltantes diretamente na pasta do repositorio valido, para depois fazer:
 		git add {arquivosParaAdicionar}
 		git commit -m {mensagem}
 	Como se esses fossem arquivos novos.
