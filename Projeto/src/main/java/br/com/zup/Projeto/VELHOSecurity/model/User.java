@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.NOVOSecurity.model;
+/*package br.com.zup.Projeto.NOVOSecurity.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -55,3 +55,4 @@ public class User {
         this.roles = roles;
     }
 }
+*/

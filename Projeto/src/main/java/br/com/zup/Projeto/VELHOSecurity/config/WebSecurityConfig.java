@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.NOVOSecurity.config;
+/*package br.com.zup.Projeto.NOVOSecurity.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +23,7 @@ import javax.annotation.Resource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /*  modelo vini endpoints*/
-    private static final String[] PUBLICOS =
+/*    private static final String[] PUBLICOS =
             {
                     "/doador",
                     "/doador/{\\d+}",
@@ -36,7 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     "/pontosdecoleta"
             };
     /* /modelo vini endpoints*/
-
+/*
     @Resource(name = "userService")
     private UserDetailsService userDetailsService;
 
@@ -65,9 +65,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable().
                 authorizeRequests()
                 /*  modelo vini endpoints*/
-                .antMatchers(PUBLICOS).permitAll()
+/*                .antMatchers(PUBLICOS).permitAll()
                 /* /modelo vini endpoints*/
-                .antMatchers("/token/*", "/signup").permitAll()
+/*                .antMatchers("/token/*", "/signup").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
@@ -81,4 +81,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-}
+}*/

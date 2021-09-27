@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.NOVOSecurity.config;
+/*package br.com.zup.Projeto.NOVOSecurity.config;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;
@@ -61,6 +61,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
         /*Davi: Este metodo está chamando meu GET, sem argumentos, e assim gerando uma série de excessões que impedem a testagem de outras classes*/
         //chain.doFilter(req, res);
-    }
+/*    }
 }
 
+*/

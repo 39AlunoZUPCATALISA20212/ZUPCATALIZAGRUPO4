@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.NOVOSecurity.repository;
+/*package br.com.zup.Projeto.NOVOSecurity.repository;
 
 
 import br.com.zup.Projeto.NOVOSecurity.model.User;
@@ -14,3 +14,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 
 
+*/

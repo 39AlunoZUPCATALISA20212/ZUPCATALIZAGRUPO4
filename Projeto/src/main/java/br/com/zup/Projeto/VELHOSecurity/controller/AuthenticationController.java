@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.NOVOSecurity.controller;
+/*package br.com.zup.Projeto.NOVOSecurity.controller;
 
 
 import br.com.zup.Projeto.NOVOSecurity.config.TokenProvider;
@@ -41,3 +41,4 @@ public class AuthenticationController {
 }
 
 
+*/

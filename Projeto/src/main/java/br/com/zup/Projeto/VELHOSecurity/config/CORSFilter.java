@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.NOVOSecurity.config;
+/*package br.com.zup.Projeto.NOVOSecurity.config;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
@@ -20,4 +20,4 @@ public class CORSFilter implements Filter {
 	public void init(FilterConfig filterConfig) {}
 
 	public void destroy() {}
-}
+}*/

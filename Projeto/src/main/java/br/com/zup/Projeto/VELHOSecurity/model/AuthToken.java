@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.NOVOSecurity.model;
+/*package br.com.zup.Projeto.NOVOSecurity.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,3 +12,4 @@ import lombok.Setter;
 public class AuthToken {
     private String token;
 }
+*/

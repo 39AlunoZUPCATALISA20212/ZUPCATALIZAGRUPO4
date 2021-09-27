@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.NOVOSecurity.model;
+/*package br.com.zup.Projeto.NOVOSecurity.model;
 
 import javax.persistence.*;
 
@@ -38,4 +38,4 @@ public class Role {
     public void setDescription(String description) {
         this.description = description;
     }
-}
+}*/

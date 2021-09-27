@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.NOVOSecurity.config;
+/*package br.com.zup.Projeto.NOVOSecurity.config;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -19,4 +19,4 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
 
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
     }
-}
+}*/

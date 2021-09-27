@@ -1,6 +1,6 @@
-package br.com.zup.Projeto.NOVOSecurity.model;
+/*package br.com.zup.Projeto.NOVOSecurity.model;
 
-public class UserDto {
+public class LoginUser {
 
     private String username;
     private String password;
@@ -20,4 +20,4 @@ public class UserDto {
     public void setPassword(String password) {
         this.password = password;
     }
-}
+}*/

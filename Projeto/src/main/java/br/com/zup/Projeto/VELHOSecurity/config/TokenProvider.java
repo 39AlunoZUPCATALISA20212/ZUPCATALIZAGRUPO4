@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.NOVOSecurity.config;
+/*package br.com.zup.Projeto.NOVOSecurity.config;
 
 
 import br.com.zup.Projeto.NOVOSecurity.model.Constants;
@@ -83,3 +83,4 @@ public class TokenProvider implements Serializable {
     }
 }
 
+*/
