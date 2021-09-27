@@ -26,6 +26,21 @@ public class ConfiguracoesDeSeguranca extends WebSecurityConfigurerAdapter {
     @Autowired
     private JWTComponente jwtComponente;
 
+    /*  modelo vini endpoints*/
+    private static final String[] PUBLICOS =
+            {
+                    "/doador",
+                    "/doador/{\\d+}",
+                    "/beneficiarios",
+                    "/entidade",
+                    "/entidade/{\\d+}",
+                    "/entidades",
+                    "/pontodecoleta",
+                    "/pontodecoleta/{\\d+}",
+                    "/pontosdecoleta"
+            };
+    /* /modelo vini endpoints*/
+
     private static final String[] GET_PUBLICOS = {
             "/usuario/{\\d+}",
     };
@@ -42,6 +57,9 @@ public class ConfiguracoesDeSeguranca extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests().antMatchers(HttpMethod.POST, POST_PUBLICOS).permitAll()
                 .antMatchers(HttpMethod.GET, GET_PUBLICOS).permitAll()
+                /*  modelo vini endpoints*/
+                .antMatchers(PUBLICOS).permitAll()
+                /* /modelo vini endpoints*/
                 .anyRequest().authenticated();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
