@@ -1,5 +1,7 @@
 package br.com.zup.Projeto.Endereco;
 
+import br.com.zup.Projeto.Endereco.NumeroEComplemento.NumeroEComplemento;
+
 import javax.persistence.*;
 
 @Entity

@@ -2,7 +2,7 @@ package br.com.zup.Projeto.Beneficiario;
 
 
 import br.com.zup.Projeto.Endereco.Endereco;
-import br.com.zup.Projeto.Endereco.NumeroEComplemento;
+import br.com.zup.Projeto.Endereco.NumeroEComplemento.NumeroEComplemento;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

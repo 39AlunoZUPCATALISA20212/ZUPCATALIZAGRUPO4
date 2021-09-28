@@ -1,5 +1,7 @@
 package br.com.zup.Projeto.Doadores;
 
+import br.com.zup.Projeto.Endereco.NumeroEComplemento.ServiceNumeroEComplemento;
+import br.com.zup.Projeto.Endereco.ServiceEndereco;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +12,15 @@ public class ServiceDoador
 {
     @Autowired
     private RepositoryDoadores repositoryDoadores;
-
+    @Autowired
+    private ServiceEndereco serviceEndereco;
+    @Autowired
+    private ServiceNumeroEComplemento serviceNumeroEComplemento;
     public Doador createDoador(Doador doador)
     {
         Doador createDoador = null;
+        serviceNumeroEComplemento.createNumeroEComplemento(doador.getEndereco().getNumeroEComplemento());
+        serviceEndereco.createEndereco(doador.getEndereco());
         createDoador = repositoryDoadores.save(doador);
         return createDoador;
     }
