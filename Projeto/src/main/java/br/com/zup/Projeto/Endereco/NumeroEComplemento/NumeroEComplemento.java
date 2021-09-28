@@ -1,4 +1,4 @@
-package br.com.zup.Projeto.Endereco;
+package br.com.zup.Projeto.Endereco.NumeroEComplemento;
 
 import javax.persistence.*;
 
