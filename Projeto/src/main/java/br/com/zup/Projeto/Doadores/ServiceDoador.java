@@ -19,7 +19,6 @@ public class ServiceDoador
     public Doador createDoador(Doador doador)
     {
         Doador createDoador = null;
-        serviceNumeroEComplemento.createNumeroEComplemento(doador.getEndereco().getNumeroEComplemento());
         serviceEndereco.createEndereco(doador.getEndereco());
         createDoador = repositoryDoadores.save(doador);
         return createDoador;

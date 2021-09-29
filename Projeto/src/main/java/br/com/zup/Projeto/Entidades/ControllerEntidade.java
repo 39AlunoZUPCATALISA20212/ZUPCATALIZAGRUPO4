@@ -9,20 +9,22 @@ import org.springframework.web.bind.annotation.*;
 public class ControllerEntidade
 {
     @Autowired
+    private ServiceDTOEntidades serviceDTOEntidades;
+    @Autowired
     private ServiceEntidades serviceEntidades;
     @PostMapping
-    public Entidade postEntidade(@RequestBody Entidade entidade)
+    public EntidadeODTO postEntidade(@RequestBody EntidadeIDTO entidadeIDTO)
     {
         Entidade postEntidade = null;
-        postEntidade = serviceEntidades.createEntidade(entidade);
-        return postEntidade;
+        postEntidade = serviceEntidades.createEntidade(serviceDTOEntidades.entidade(entidadeIDTO));
+        return serviceDTOEntidades.entidadeODTO(postEntidade);
     }
     @GetMapping("/{ID}")
-    public Entidade getEntidade(@PathVariable(name = "ID") int entidadeId)
+    public EntidadeODTO getEntidade(@PathVariable(name = "ID") int entidadeId)
     {
         Entidade getEntidade = null;
         getEntidade = serviceEntidades.readEntidadeId(entidadeId);
-        return getEntidade;
+        return serviceDTOEntidades.entidadeODTO(getEntidade);
     }
 
 }

@@ -50,7 +50,8 @@ public class FiltroDeAutorizacaoJWT extends BasicAuthenticationFilter {
                 System.out.println(exception.getMessage());
             }
         }
-
+        /*Davi: Este metodo está chamando meu GET, sem argumentos, e assim gerando uma série de excessões que impedem a testagem de outras classes*/
         chain.doFilter(request, response);
+        /*; Quando comentado ele passa a responder todas as requisicoes com 200OK, ou seja continua impedindo a testagem, que m* hein*;*/
     }
 }

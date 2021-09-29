@@ -34,7 +34,7 @@ class ServiceEntidadesTest {
         Entidade objEntidadeTeste = serviceEntidades.createEntidade(entidade);
         Assertions.assertEquals(entidade, objEntidadeTeste);
     }
-
+/*
     @Test
     public void testExibirEntidadeDoador(){
         Iterable<Entidade> readEntidatesDoador = null;
@@ -46,7 +46,7 @@ class ServiceEntidadesTest {
         Assertions.assertTrue(serviceEntidades.readEntidadesDoador(beneficiarioIterable) instanceof List);
 
     }
-
+*/
     @Test
     public void testReadEntidadeId(){
         Entidade entidade = new Entidade();

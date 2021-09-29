@@ -6,43 +6,28 @@ import br.com.zup.Projeto.TiposDeDoacoes.TiposDeDoacoes;
 import br.com.zup.Projeto.TiposDeDoador.TiposDeDoador;
 import br.com.zup.Projeto.TiposDeDonativos.TiposDeDonativos;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import java.time.LocalTime;
 import java.util.List;
 
-@Table(name = "entidades")
-@Entity
-public class Entidade
+public class EntidadeIDTO
 {
-    @Column(nullable = false)
     private String razaoSocial;
-    @Column(nullable = false)
     private String nomeFantasia;
-    @Column(nullable = false)
     private String enderecoWeb;
-    @Column(unique = true, nullable = false)
     private String email;
-    @Column(nullable = false)
     private String telefone;
-    @Column(unique = true, nullable = false)
     private String cnpj;
-    @ManyToOne
     private Endereco endereco;
-    @ManyToMany(targetEntity = TiposDeBeneficiario.class)
-    private List<TiposDeBeneficiario> beneficiarios;
-    @ManyToMany(targetEntity = TiposDeDonativos.class)
-    private List<TiposDeDonativos> donativos;
-    @ManyToMany(targetEntity = TiposDeDoador.class)
-    private List<TiposDeDoador> doadores;
-    @ManyToMany(targetEntity = TiposDeDoacoes.class)
-    private List<TiposDeDoacoes> doacoes;
+    private List<String> beneficiarios;
+    private List<String> donativos;
+    private List<String> doadores;
+    private List<String> doacoes;
     private LocalTime funcionamento;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    private int id;
 
-
-    public Entidade() {
+    public EntidadeIDTO() {
     }
 
     public String getRazaoSocial() {
@@ -101,35 +86,35 @@ public class Entidade
         this.endereco = endereco;
     }
 
-    public List<TiposDeBeneficiario> getBeneficiarios() {
+    public List<String> getBeneficiarios() {
         return beneficiarios;
     }
 
-    public void setBeneficiarios(List<TiposDeBeneficiario> beneficiarios) {
+    public void setBeneficiarios(List<String> beneficiarios) {
         this.beneficiarios = beneficiarios;
     }
 
-    public List<TiposDeDonativos> getDonativos() {
+    public List<String> getDonativos() {
         return donativos;
     }
 
-    public void setDonativos(List<TiposDeDonativos> donativos) {
+    public void setDonativos(List<String> donativos) {
         this.donativos = donativos;
     }
 
-    public List<TiposDeDoador> getDoadores() {
+    public List<String> getDoadores() {
         return doadores;
     }
 
-    public void setDoadores(List<TiposDeDoador> doadores) {
+    public void setDoadores(List<String> doadores) {
         this.doadores = doadores;
     }
 
-    public List<TiposDeDoacoes> getDoacoes() {
+    public List<String> getDoacoes() {
         return doacoes;
     }
 
-    public void setDoacoes(List<TiposDeDoacoes> doacoes) {
+    public void setDoacoes(List<String> doacoes) {
         this.doacoes = doacoes;
     }
 
@@ -139,13 +124,5 @@ public class Entidade
 
     public void setFuncionamento(LocalTime funcionamento) {
         this.funcionamento = funcionamento;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

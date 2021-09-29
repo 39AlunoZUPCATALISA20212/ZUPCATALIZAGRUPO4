@@ -6,43 +6,29 @@ import br.com.zup.Projeto.TiposDeDoacoes.TiposDeDoacoes;
 import br.com.zup.Projeto.TiposDeDoador.TiposDeDoador;
 import br.com.zup.Projeto.TiposDeDonativos.TiposDeDonativos;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import java.time.LocalTime;
 import java.util.List;
 
-@Table(name = "entidades")
-@Entity
-public class Entidade
+public class EntidadeODTO
 {
-    @Column(nullable = false)
     private String razaoSocial;
-    @Column(nullable = false)
     private String nomeFantasia;
-    @Column(nullable = false)
     private String enderecoWeb;
-    @Column(unique = true, nullable = false)
     private String email;
-    @Column(nullable = false)
     private String telefone;
-    @Column(unique = true, nullable = false)
     private String cnpj;
-    @ManyToOne
     private Endereco endereco;
-    @ManyToMany(targetEntity = TiposDeBeneficiario.class)
     private List<TiposDeBeneficiario> beneficiarios;
-    @ManyToMany(targetEntity = TiposDeDonativos.class)
     private List<TiposDeDonativos> donativos;
-    @ManyToMany(targetEntity = TiposDeDoador.class)
     private List<TiposDeDoador> doadores;
-    @ManyToMany(targetEntity = TiposDeDoacoes.class)
     private List<TiposDeDoacoes> doacoes;
     private LocalTime funcionamento;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
     private int id;
 
-
-    public Entidade() {
+    public EntidadeODTO() {
     }
 
     public String getRazaoSocial() {

@@ -1,8 +1,15 @@
 package br.com.zup.Projeto.Entidades;
 
+import br.com.zup.Projeto.Endereco.ServiceEndereco;
+import br.com.zup.Projeto.TableLoader.TableLoader;
+import br.com.zup.Projeto.TiposDeBeneficiario.TiposDeBeneficiario;
+import br.com.zup.Projeto.TiposDeDoacoes.TiposDeDoacoes;
 import br.com.zup.Projeto.TiposDeDoador.OsTiposDeDoador;
 import br.com.zup.Projeto.TiposDeDoador.ServiceTiposDeDoador;
 import br.com.zup.Projeto.TiposDeDoador.TiposDeDoador;
+import br.com.zup.Projeto.TiposDeDonativos.TiposDeDonativos;
+import br.com.zup.Projeto.TiposDeTipos.OsTiposDeTipos;
+import br.com.zup.Projeto.TiposDeTipos.TiposDeTipos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,31 +22,73 @@ public class ServiceEntidades
     @Autowired
     private RepositoryEntidades repositoryEntidades;
     @Autowired
+    private TableLoader tableLoader;
+    @Autowired
     private ServiceTiposDeDoador serviceTiposDeDoador;
-
+    @Autowired
+    private ServiceEndereco serviceEndereco;
     public Entidade createEntidade(Entidade entidade)
     {
         Entidade createEntidade = null;
+        tableLoader.tableloader();
+        serviceEndereco.createEndereco(entidade.getEndereco());
         createEntidade = repositoryEntidades.save(entidade);
         return createEntidade;
     }
-    public Iterable<Entidade> readEntidade()
+    public Iterable<Entidade> readEntidades()
     {
         Iterable<Entidade> readEntidade = null;
         readEntidade = repositoryEntidades.findAll();
         return readEntidade;
     }
-    public Iterable<Entidade> readEntidadesDoador(Iterable<TiposDeDoador> iterable)
+    /*public Iterable<Entidade> readEntidadesDoador(Iterable<TiposDeDoador> iterable)
     {
-        Iterable<Entidade> readEntidatesDoador = null;
+        Iterable<Entidade> readEntidadesDoador = null;
         readEntidatesDoador = repositoryEntidades.findAllBydoadoresIn(iterable);
         return readEntidatesDoador;
-    }
-    public Iterable<Entidade> readEntidadesEnumString (String string)
+    }*/
+    public Iterable<Entidade> readEntidadesEnum(OsTiposDeTipos enuM, Iterable iterable)
     {
-        TiposDeDoador readEntidadeEnumString = null;
-        readEntidadeEnumString = serviceTiposDeDoador.readTiposDeDoadorTiposDeDoador(OsTiposDeDoador.valueOf(string));
-        return readEntidadesDoador(List.of(readEntidadeEnumString));
+        Iterable<Entidade> readEntidadesEnum = null;
+        switch (enuM){
+            case BENEFICIARIO:
+                    readEntidadesEnum = repositoryEntidades.findAllBydoadoresIn(iterable);
+            case DOADOR:
+                    readEntidadesEnum = repositoryEntidades.findAllBydoadoresIn(iterable);
+            case DONATIVOS:
+                    break;
+            case DOACOES:
+                    break;
+            default:
+                    break;
+        }
+        return readEntidadesEnum;
+    }
+    public Iterable<Entidade> readEntidadesEnumString (OsTiposDeTipos enuM, String string)
+    {
+        Iterable readEntidadesEnumString = null;
+        TiposDeBeneficiario readEntidadesBeneficiario = null;
+        TiposDeDoador readEntidadesDoador = null;
+        TiposDeDonativos readEntidadesDonativos = null;
+        TiposDeDoacoes readEntidadesDoacoes = null;
+        switch (enuM){
+            case BENEFICIARIO:
+                    break;
+            case DOADOR:
+                    readEntidadesDoador = serviceTiposDeDoador.readTiposDeDoadorTiposDeDoador(OsTiposDeDoador.valueOf(string));
+                    readEntidadesEnumString = List.of(readEntidadesDoador);
+                    //return readEntidadesEnum(OsTiposDeTipos.DOADOR, readEntidadesEnumString);
+            case DONATIVOS:
+                    break;
+            case DOACOES:
+                    break;
+            default:
+                    break;
+        }
+        return readEntidadesEnum(OsTiposDeTipos.DOADOR, readEntidadesEnumString);
+        //readEntidadesEnumString
+        //return readEntidadesDoador(List.of(readEntidadeEnumString));
+        //return readEntidadesEnum(List.of(readEntidadeEnumString));
     }
     public Entidade readEntidadeId(int id)
     {
